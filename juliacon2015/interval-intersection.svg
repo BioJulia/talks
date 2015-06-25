@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="716px" height="180px" viewBox="0 0 716 180" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>Slice 1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <rect id="Rectangle-1" stroke="#2E8F79" fill="#50E3C2" sketch:type="MSShapeGroup" x="93" y="1" width="197" height="20"></rect>
+        <rect id="Rectangle-1-Copy" stroke="#2E8F79" fill="#50E3C2" sketch:type="MSShapeGroup" x="211" y="29" width="149" height="20"></rect>
+        <rect id="Rectangle-1-Copy-2" stroke="#2E8F79" fill="#50E3C2" sketch:type="MSShapeGroup" x="476" y="1" width="115" height="20"></rect>
+        <rect id="Rectangle-1-Copy-4" stroke="#2E8F79" fill="#50E3C2" sketch:type="MSShapeGroup" x="674" y="1" width="41" height="20"></rect>
+        <rect id="Rectangle-1-Copy-3" stroke="#2E8F79" fill="#50E3C2" sketch:type="MSShapeGroup" x="414" y="28" width="115" height="20"></rect>
+        <rect id="Rectangle-1-Copy-9" stroke="#A3522A" fill="#F59F74" sketch:type="MSShapeGroup" x="80" y="131" width="64" height="20"></rect>
+        <rect id="Rectangle-1-Copy-8" stroke="#A3522A" fill="#F59F74" sketch:type="MSShapeGroup" x="286" y="159" width="75" height="20"></rect>
+        <rect id="Rectangle-1-Copy-7" stroke="#A3522A" fill="#F59F74" sketch:type="MSShapeGroup" x="340" y="131" width="115" height="20"></rect>
+        <rect id="Rectangle-1-Copy-6" stroke="#A3522A" fill="#F59F74" sketch:type="MSShapeGroup" x="598" y="131" width="41" height="20"></rect>
+        <rect id="Rectangle-1-Copy-5" stroke="#A3522A" fill="#F59F74" sketch:type="MSShapeGroup" x="414" y="158" width="115" height="20"></rect>
+        <text id="A" sketch:type="MSTextLayer" font-family="Adagio_Sans" font-size="40" font-weight="normal" fill="#000000">
+            <tspan x="0" y="42">A</tspan>
+        </text>
+        <text id="B" sketch:type="MSTextLayer" font-family="Adagio_Sans" font-size="40" font-weight="normal" fill="#000000">
+            <tspan x="0" y="166">B</tspan>
+        </text>
+    </g>
+</svg>
