@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation,slidewinder" />
+    <meta name="description" content=" - a slide deck by " />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="fonts/SinhalaMN/stylesheet.css">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif);
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+      /**
+       * Emulating <blink> using WebKit CSS3 animation
+       *   This code is part of John Smith's blog
+       *
+       * Copyright 2010 by John Smith, All Rights Reserved
+       *
+       * @link   http://www.john-smith.me/emulating--lt-blink-gt--using-webkit-css3-animation
+       * @date   18th October 2010 at 11:01 p.m.
+       * @author John Smith
+       */
+      @-webkit-keyframes blinker { from {opacity:1.0;} to {opacity:0.0;} }
+              @keyframes blinker { from {opacity:1.0;} to {opacity:0.0;} }
+      .terminal {
+        position: absolute;
+        bottom: 3em;
+        left: 3em;
+        color: lightgreen;
+        font-weight: bold;
+        font-family: 'Ubuntu Mono';
+      }
+      .prompt {
+         text-decoration:blink;
+
+        -webkit-animation-name:blinker;
+                animation-name:blinker;
+        -webkit-animation-iteration-count:infinite;
+                animation-iteration-count:infinite;
+        -webkit-animation-timing-function:cubic-bezier(1.0,0,0,1.0);
+                animation-timing-function:cubic-bezier(1.0,0,0,1.0);
+        -webkit-animation-duration:1s;
+                animation-duration:1s;
+        color: white;
+        text-align: left;
+      }
+      .terminal .cmd {
+        color: #aaa;
+        font-weight: lighter;
+      }
+      .terminal .output {
+        color: #aaa;
+        font-weight: lighter;
+        font-style: italic;
+      }
+      .terminal p {
+        margin: 10px 0;
+        text-align: left;
+      }
+      .house { width: 15px; }
+      .strike { text-decoration: line-through; }
+      .footnote { font-size: 0.7em; }
+      body {
+        font-family: 'Sinhala MN';
+      }
+      h1, h2, h3 {
+        font-family: 'Sinhala MN';
+        font-weight: 400;
+        margin-bottom: 0;
+      }
+      .remark-slide-content h1 { font-size: 3em; }
+      .remark-slide-content h2 { font-size: 2em; }
+      .remark-slide-content h3 { font-size: 1.6em; }
+      li p { line-height: 1.25em; }
+      .red { color: #fa0000; }
+      .large { font-size: 2em; }
+      a, a > code {
+        color: rgb(249, 38, 114);
+        text-decoration: none;
+      }
+      code {
+        background: #e7e8e2;
+        border-radius: 5px;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .remark-code-line-highlighted     { background-color: #373832; }
+      .pull-left {
+        float: left;
+        width: 47%;
+      }
+      .pull-right {
+        float: right;
+        width: 47%;
+      }
+      .pull-right ~ p {
+        clear: both;
+      }
+      #slideshow .slide .content code {
+        font-size: 0.8em;
+      }
+      #slideshow .slide .content pre code {
+        font-size: 0.9em;
+        padding: 15px;
+      }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      #slide-how .slides {
+        font-size: 0.9em;
+        position: absolute;
+        top:  151px;
+        right: 140px;
+      }
+      #slide-how .slides h3 {
+        margin-top: 0.2em;
+      }
+      #slide-how .slides .first, #slide-how .slides .second {
+        padding: 1px 20px;
+        height: 90px;
+        width: 120px;
+        -moz-box-shadow: 0 0 10px #777;
+        -webkit-box-shadow: 0 0 10px #777;
+        box-shadow: 0 0 10px #777;
+      }
+      #slide-how .slides .first {
+        background: #fff;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        z-index: 1;
+      }
+      #slide-how .slides .second {
+        position: relative;
+        background: #fff;
+        z-index: 0;
+      }
+      /* Two-column layout */
+      .left-column {
+        color: #000;
+        width: 20%;
+        height: 92%;
+        float: left;
+      }
+      .left-column h2, .left-column h3 {
+        color: #000
+      }
+        .left-column h2:last-of-type, .left-column h3:last-child {
+          color: #777;
+        }
+      .right-column {
+        width: 75%;
+        float: right;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+name: titleslide
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+class: center, middle
+
+# How biojulia is building for the future
+&lt;object data&#x3D;&quot;fonts/SinhalaMN/biojulia.svg&quot; type&#x3D;&quot;image/svg+xml&quot; /&gt;
+
+---
+name: whoami1
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+class: center, middle
+
+
+# &gt; whoami
+
+**Ben** / **Ward9250**
+
+Evolutionary Biology/Genetics, Bioinformatics, Programming - I like them!
+
+Games and Batman - I also like them!
+
+.center[![profile pic](img/Riddlemethis.jpg)]
+
+---
+name: whoami2
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# &gt; whoami
+
+### Roles:
+
+- PhD Candidate (Evolutionary and Population Genetics) @ **University of East Anglia**
+    - van Oosterhout Group @ The School of Environmental Sciences
+        - c.van-oosterhout@uea.ac.uk
+
+- Software Developer @ **The Genome Analysis Center**
+    - Plant and Microbial Genomics
+        - Matt Clark Group
+            - matt.clark@tgac.ac.uk
+
+---
+name: whoami3
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# &gt; whoami
+
+### Projects
+
+- **BioJulia**
+
+- Slidewinder
+
+- HybridCheck
+
+- Evolution of Polar Diatoms.
+
+- Plant pathogens genomics; Hybridisation and Introgression.
+
+---
+name: contact
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+
+# Reaching me
+
+I use the handle &quot;Ward9250&quot; where possible.
+
+- @Ward9250
+
+- ben.ward@tgac.ac.uk
+
+- webtocome
+
+- https://github.com/Ward9250
+
+- https://keybase.io/Ward9250 &lt;- Talk to me all secret-agent like!
+
+---
+name: julialogo
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+class: center, middle
+
+&lt;svg version&#x3D;&quot;1.1&quot; id&#x3D;&quot;Layer_1&quot; xmlns&#x3D;&quot;http://www.w3.org/2000/svg&quot; xmlns:xlink&#x3D;&quot;http://www.w3.org/1999/xlink&quot; x&#x3D;&quot;0px&quot; y&#x3D;&quot;0px&quot; width&#x3D;&quot;210px&quot; height&#x3D;&quot;142px&quot; viewBox&#x3D;&quot;0 0 310 216&quot; enable-background&#x3D;&quot;new 0 0 310 216&quot; xml:space&#x3D;&quot;preserve&quot;&gt;
+
+&lt;!-- blue dot --&gt;
+&lt;circle fill&#x3D;&quot;#6b85dd&quot; stroke&#x3D;&quot;#4266d5&quot; stroke-width&#x3D;&quot;3&quot; cx&#x3D;&quot;50.5&quot; cy&#x3D;&quot;58.665&quot; r&#x3D;&quot;16.5&quot;&gt;&lt;/circle&gt;
+&lt;!-- red dot --&gt;
+&lt;circle fill&#x3D;&quot;#d66661&quot; stroke&#x3D;&quot;#c93d39&quot; stroke-width&#x3D;&quot;3&quot; cx&#x3D;&quot;212.459&quot; cy&#x3D;&quot;60.249&quot; r&#x3D;&quot;16.5&quot;&gt;&lt;/circle&gt;
+&lt;!-- green dot --&gt;
+&lt;circle fill&#x3D;&quot;#6bab5b&quot; stroke&#x3D;&quot;#3b972e&quot; stroke-width&#x3D;&quot;3&quot; cx&#x3D;&quot;233.834&quot; cy&#x3D;&quot;23.874&quot; r&#x3D;&quot;16.5&quot;&gt;&lt;/circle&gt;
+&lt;!-- purple dot --&gt;
+&lt;circle fill&#x3D;&quot;#aa7dc0&quot; stroke&#x3D;&quot;#945bb0&quot; stroke-width&#x3D;&quot;3&quot; cx&#x3D;&quot;255.459&quot; cy&#x3D;&quot;59.999&quot; r&#x3D;&quot;16.5&quot;&gt;&lt;/circle&gt;
+
+&lt;!-- &quot;j&quot; --&gt;
+&lt;path fill&#x3D;&quot;#252525&quot; d&#x3D;&quot;M37.216,138.427c0-15.839,0.006-31.679-0.018-47.517c-0.001-0.827,0.169-1.234,1.043-1.47
+	c7.876-2.127,15.739-4.308,23.606-6.47c1.33-0.366,1.333-0.36,1.333,1.019c0,25.758,0.015,51.517-0.012,77.274
+	c-0.006,5.514,0.245,11.032-0.272,16.543c-0.628,6.69-2.15,13.092-6.438,18.506c-3.781,4.771-8.898,7.25-14.767,8.338
+	c-6.599,1.222-13.251,1.552-19.934,0.938c-4.616-0.423-9.045-1.486-12.844-4.363c-2.863-2.168-4.454-4.935-3.745-8.603
+	c0.736-3.806,3.348-5.978,6.861-7.127c2.262-0.74,4.628-0.872,6.994-0.53c1.823,0.264,3.42,1.023,4.779,2.288
+	c1.38,1.284,2.641,2.674,3.778,4.177c0.872,1.15,1.793,2.256,2.991,3.086c2.055,1.426,4,0.965,5.213-1.216
+	c0.819-1.473,0.997-3.106,1.173-4.731c0.255-2.348,0.255-4.707,0.256-7.062C37.218,167.145,37.216,152.786,37.216,138.427z&quot;&gt;&lt;/path&gt;
+
+&lt;!-- &quot;u&quot; --&gt;
+&lt;path fill&#x3D;&quot;#252525&quot; d&#x3D;&quot;M125.536,162.479c-2.908,2.385-5.783,4.312-8.88,5.904c-10.348,5.323-20.514,4.521-30.324-1.253
+	c-6.71-3.95-11.012-9.849-12.52-17.606c-0.236-1.213-0.363-2.438-0.363-3.688c0.01-19.797,0.017-39.593-0.02-59.39
+	c-0.002-1.102,0.285-1.357,1.363-1.351c7.798,0.049,15.597,0.044,23.396,0.003c0.95-0.005,1.177,0.25,1.175,1.183
+	c-0.027,19.356-0.025,38.713-0.018,58.07c0.002,6.34,3.599,10.934,9.672,12.42c2.13,0.521,4.19,0.396,6.173-0.6
+	c4.26-2.139,7.457-5.427,10.116-9.307c0.333-0.487,0.224-1,0.224-1.51c0.007-19.635,0.016-39.271-0.02-58.904
+	c-0.002-1.083,0.255-1.369,1.353-1.361c7.838,0.052,15.677,0.045,23.515,0.004c0.916-0.005,1.103,0.244,1.102,1.124
+	c-0.025,27.677-0.026,55.353,0.002,83.024c0.001,0.938-0.278,1.099-1.139,1.095c-7.918-0.028-15.837-0.028-23.756-0.001
+	c-0.815,0.003-1.1-0.166-1.073-1.037C125.581,167.117,125.536,164.928,125.536,162.479z&quot;&gt;&lt;/path&gt;
+
+&lt;!-- &quot;l&quot; --&gt;
+&lt;path fill&#x3D;&quot;#252525&quot; d&#x3D;&quot;M187.423,107.08c0,20.637-0.011,41.273,0.026,61.91c0.003,1.119-0.309,1.361-1.381,1.355
+	c-7.799-0.052-15.598-0.047-23.396-0.008c-0.898,0.008-1.117-0.222-1.115-1.115c0.021-39.074,0.021-78.147,0-117.226
+	c0-0.811,0.189-1.169,1.006-1.392c7.871-2.149,15.73-4.327,23.584-6.545c1.045-0.295,1.308-0.17,1.306,0.985
+	C187.412,65.727,187.423,86.403,187.423,107.08z&quot;&gt;&lt;/path&gt;
+
+&lt;!-- &quot;i&quot; --&gt;
+&lt;path fill&#x3D;&quot;#252525&quot; d&#x3D;&quot;M223.46,126.477c0,14.155-0.011,28.312,0.021,42.467c0.002,1.027-0.164,1.418-1.332,1.408
+	c-7.838-0.061-15.676-0.047-23.516-0.01c-0.881,0.004-1.121-0.189-1.119-1.104c0.026-26.153,0.025-52.307,0-78.458
+	c0-0.776,0.203-1.101,0.941-1.302c7.984-2.172,15.972-4.35,23.938-6.596c1.049-0.296,1.08,0.031,1.078,0.886
+	C223.454,98.004,223.46,112.239,223.46,126.477z&quot;&gt;&lt;/path&gt;
+
+&lt;!-- &quot;a&quot; --&gt;
+&lt;path fill&#x3D;&quot;#252525&quot; d&#x3D;&quot;M277.695,163.6c-0.786,0.646-1.404,1.125-2,1.635c-4.375,3.746-9.42,5.898-15.16,6.42
+	c-5.792,0.527-11.479,0.244-16.934-2.047c-12.08-5.071-15.554-17.188-11.938-27.448c1.799-5.111,5.472-8.868,9.831-11.94
+	c5.681-4.003,12.009-6.732,18.504-9.074c5.576-2.014,11.186-3.939,16.955-5.347c0.445-0.104,0.773-0.243,0.757-0.854
+	c-0.136-4.389,0.261-8.79-0.479-13.165c-1.225-7.209-6.617-10.013-12.895-9.348c-0.516,0.055-1.029,0.129-1.536,0.241
+	c-4.877,1.081-7.312,4.413-7.374,10.127c-0.02,1.729-0.229,3.418-0.693,5.084c-0.906,3.229-2.969,5.354-6.168,6.266
+	c-3.422,0.979-6.893,0.998-10.23-0.305c-6.529-2.543-8.877-10.164-5.12-16.512c2.249-3.799,5.606-6.4,9.461-8.405
+	c6.238-3.246,12.914-4.974,19.896-5.537c7.565-0.61,15.096-0.366,22.49,1.507c4.285,1.085,8.312,2.776,11.744,5.657
+	c4.473,3.749,6.776,8.647,6.812,14.374c0.139,21.477,0.096,42.951,0.143,64.428c0.002,0.799-0.248,0.983-1.021,0.98
+	c-8.035-0.025-16.074-0.023-24.113-0.001c-0.716,0.002-0.973-0.146-0.941-0.915C277.736,167.562,277.695,165.698,277.695,163.6z
+	 M277.695,126.393c-4.793,2.104-9.25,4.373-13.287,7.408c-2.151,1.618-4.033,3.483-5.732,5.581
+	c-4.229,5.226-1.988,13.343,1.693,16.599c1.592,1.406,3.359,1.906,5.419,1.521c1.621-0.307,3.149-0.857,4.549-1.734
+	c1.521-0.951,2.949-2.072,4.539-2.887c2.31-1.18,2.97-2.861,2.894-5.445C277.561,140.484,277.695,133.527,277.695,126.393z&quot;&gt;&lt;/path&gt;
+
+&lt;/svg&gt;
+
+---
+name: julia_features
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# julia&#x27;s features...
+
+- Multiple dispatch
+
+- Dynamic type system
+
+- User defined types
+
+- Speed
+
+- Package manager
+
+- Macros and metaprogramming
+
+- PyCall
+
+- Call C code directly
+
+- Shell capability
+
+- Coroutines and tasks
+
+---
+name: benchmarks
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# The canonical benchmarks - (caveats of course apply!)
+
+![Where&#x27;s the graph?!](http://i0.wp.com/randomfantasies.com/wp-content/uploads/2015/05/juliabench-1024x633.png?resize&#x3D;625%2C387)
+
+.footnote[http://julialang.org/]
+
+---
+name: bmarkcode
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Example code
+
+&#x60;&#x60;&#x60;julia
+function randmatstat(t)
+    n &#x3D; 5
+    v &#x3D; zeros(t)
+    w &#x3D; zeros(t)
+    for i &#x3D; 1:t
+        a &#x3D; randn(n,n)
+        b &#x3D; randn(n,n)
+        c &#x3D; randn(n,n)
+        d &#x3D; randn(n,n)
+        P &#x3D; [a b c d]
+        Q &#x3D; [a b; c d]
+        v[i] &#x3D; trace((P.&#x27;*P)^4)
+        w[i] &#x3D; trace((Q.&#x27;*Q)^4)
+    end
+    std(v)/mean(v), std(w)/mean(w)
+end
+&#x60;&#x60;&#x60;
+
+.footnote[http://julialang.org/]
+
+---
+name: whyjulia
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Ok... but why?
+
+- Came about to tackle the two-language problem.
+
+- I love programming and different tools and languages... but!
+
+- The two language problem hinders science.
+
+- It prevents us &quot;treating code right&quot;.
+
+- Too many languages for the non-code-savvy scientist.
+
+- Time spent mastering the n&#x27;th language is time not thinking about subject.
+
+- Mixing and combining languages is even more troublesome!
+
+- What does this mean when it comes to review?
+
+- And what about packages, publication &#x3D; one review?
+
+---
+name: mozillacr
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Mozilla Code Review
+
+- Mozilla &amp; PLOS Compulational Biology
+
+- Code between 200-500 lines from a series of selected papers.
+
+- Typical analysis code in Python, R, Perl - Not packages.
+
+- Interviewed volunteers.
+
+## Findings
+
+- Most scientists claimed it was their first time.
+
+- Code was not written for others to use.
+
+- Lack of commenting and documentation.
+
+- Much discussion on whether scientists are encouraged to participate in CR.
+
+.footnote[Full write up: http://arxiv.org/abs/1311.2412]
+
+---
+name: origins
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Enter BioJulia
+
+## Began with individual efforts
+
+- BioSeq.jl
+
+- Phylogenetics.jl
+
+## Core Team...
+Daniel Jones (University of Washington) - @dcjones
+
+Richard Smith Unna (Cambridge University) - @blahah404
+
+Ben J. Ward (UEA, TGAC) - @Ward9250
+
+Kenta Sato (University of Tokyo) - @bicycle1885
+
+Paulo Castro (University of São Paulo) - @prcastro
+
+Diego Zea (Buenos Aires, Argentina) - @diegozea
+
+---
+name: packages
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Maintained packages
+
+- Bio
+
+- FMIndexes
+
+- Libz
+
+- WaveletMatrices
+
+- IndexableBitVectors
+
+- BioFmtSpecimens
+
+- BufferedStreams
+
+- IntervalStreams
+
+- Dat
+
+- Dalliance
+
+---
+name: whatwewant
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# What we want
+
+- A well maintained base infrastructure package of very efficient types and algorithms for biology.
+    - Bio.jl
+
+    - Suitable for more high level packages.
+
+
+
+- Constant and consistent code review.
+
+
+- An open and inclusive community.
+
+
+- Learning resources.
+
+
+- To write out code *once*, to have more people able to review it, modify it, improve it!
+
+---
+name: parsing1
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Parsers can be a pain!
+
+## Fasta - simple format to parse and enforce.
+
+&#x60;&#x60;&#x60;
+» seqtk seq -r sweetpea.fasta
+
+&gt;gi|3176602|gb|U78617.1|LOU78617 Lathyrus odoratus phytochrome A (PHYA) gene, partial cds
+AACAAACCTCGGAGTAGTGTTATGACAAACTACCAAACCCCAAAGTCTCTTTTTCTTTTGTGGTAGAACTGCGTCACGGCTATCTCCATCTTC
+&#x60;&#x60;&#x60;
+
+---
+name: parsing2
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Parsers can be a pain!
+
+## So why can you parse ASCII pizzas with FASTA parsers?
+
+&#x60;&#x60;&#x60;
+» seqtk seq -r pizza.txt
+
+
+&gt;  | &quot;         &#x60;.&#x27;  &quot;   //      .&#x27;  :  &quot;      &#x27;         ~  //     &#x60;&quot;&quot;&quot;   *|  |
+,   . *    @ &quot;@    .@.@    )Q(       .   /     ,  )O(   &quot;   ,     &#x27;&#x27;---..__         .   .   &quot;  ; ,@&#x27;.  ~  .@.@ .    ~  &quot;&quot;--- /     , &quot;  _    &#x27;&#x27;&#x27;--..,__                  &#x27;   .  .    @   .@    *  .   &quot;      ..___/    &#x27;. &#x27;&#x27;---..__          &#x27;&#x27;&#x27;--@..@         |  &#x27;  \\ ,   .--.   &quot;     ~    &#x27;.@    *        __          &#x27;&#x27;--...__   &quot;  @  &#x27;        |  |   \\ &quot; .        &quot;--@    * .@&#x27;,_&#x27;   ,        &#x27;&quot;&#x27;--..,__ &quot;&quot;&quot;@   ~      |  |        |  | ~  \\    ))(   .    &#x27; &quot;   &#x27;.   &#x27;  , &#x27;&quot;--..__    ~    &#x27;,    .&#x27;  ||  , |  |        |  |       &#x27;   _  &quot;  .--.      .-&quot;&quot;,   __     &quot; )0(    &quot;  ___| |__  ||   *|  |        |  |  )G(     *           @  ~        )@( &#x27;...@  _  ,      ~ .-.    &#x27;, ~  |  |        |  | &quot;    .    ~  //   )g(  &quot;&#x3D;&#x3D;&#x3D;&#x3D; , ~    ,    &#x27;  ~   //        .  &quot;       |  |
+
+&gt;,..--&#x27;&#x27;&#x27;    .   *  ~   ||   *    ~      / &quot;     *        , ~  &#x60;    ~  , (O)  &#x27;   .
+&#x27;.-@                    &#x27;&#x27;&quot;&quot;&quot;&quot;&quot;&#x27;@                  , @  _.-@                &#x27;--..___         ___..--@         /   _.-@  .@              &#x27;-.,_      &quot;&quot;--....--@&quot;       _.@     / &quot; .    .@  _.@           &#x27;-._     &#x27;&quot;-.__   &quot;  @  *  _..-@@   ,    /     // ,   .@  .@         &#x27;._     &quot;-._ * )O(      \\     ,    _.,    /   . //    &quot;   .@  .        &#x27;,    &quot;-._ ~          *  , \\  )o(  &quot;  /    / )G(  .  *        .  .@      &#x27;,   &#x27;._ *    &#x27;@ &#x27;  ~              *    /    /     .  &#x27;     )g( ,  @  .     /   &#x27;.      &quot;  @&#x27;, :  ,  ,__.   ~      ,/    /  ~   *  @ &quot;@       ~  .  .@   &#x27;,   .  //      &#x27;.   &#x27;     :   :     &quot;   /    /     &quot;   ; ,@&#x27;. * -----  .@  @  /    .  //   )@(  .--,   ||  .-.         /    /,__.      @   .@   _____    @  . ,   &#x27; &quot; ./  *  _  .   &quot;   ||       )O(  ~/    / :   :  j|  .--.   . ~    &quot;   &#x27;  &#x27;.   &#x27;          &quot;    *    . || &quot;   ~  _   /    &#x27;   .-.   || &quot;      &quot;   )@(   , |  |
+&#x60;&#x60;&#x60;
+
+This particular parser is used 1615 times on GitHub.
+
+Because formats are not standardized, parsers are often &quot;non-validating&quot; or vaguely defined.
+
+---
+name: parsing3
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Enter State machine specifications
+With Ragel we can define a FASTA parser in 9 lines that&#x27;s faster and more accurate that most hand-written C/C++ parsers.
+&#x60;&#x60;&#x60;
+newline     &#x3D; &#x27;\r&#x27;? &#x27;\n&#x27;;
+hspace      &#x3D; [ \t\v];
+whitespace  &#x3D; space | newline;
+
+identifier  &#x3D; (any - space)+;
+description &#x3D; ((any - hspace) [^\r\n]*);
+letters     &#x3D; (any - space - &#x27;&gt;&#x27;)+;
+sequence    &#x3D; whitespace* letters? (whitespace+ letters)*;
+fasta_entry &#x3D; &#x27;&gt;&#x27; identifier (hspace+ description)? newline sequence whitespace*;
+
+main :&#x3D; whitespace* (fasta_entry)*;
+&#x60;&#x60;&#x60;
+The same specification can be used to generate equivalent parsers C, D, Go, Java, Ruby, C#, OCaml.
+
+---
+name: parsing4
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Parsers are fast
+&#x60;&#x60;&#x60;julia
+using Bio.Seq
+
+@time collect(read(&quot;/Users/dcjones/Homo_sapiens.GRCh38.dna.primary_assembly.fa&quot;, FASTA));
+&#x60;&#x60;&#x60;
+26.561 seconds (8951 allocations: 1423 MB, 4.74% gc time)
+30.8 seconds in Biostrings (R), 39.7 seconds in SeqAn(C++)
+
+Other cool stuff is possible too!
+&#x60;&#x60;&#x60;
+using Bio.Seq
+
+# Memory mapping
+read(&quot;/Users/dcjones/Homo_sapiens.GRCh38.dna.primary_assembly.fa&quot;, FASTA, memory_map&#x3D;true)
+
+# Reading from commands
+for seqrec in take(drop(read(&#x60;quip -cd /Users/dcjones/SRR094166.fastq.qp&#x60;, FASTQ), 10000), 3)
+    println(seqrec)
+end
+&#x60;&#x60;&#x60;
+
+---
+name: nucseq
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Nucleotide Sequences
+### 2 bit encoding:
+&#x60;&#x60;&#x60;
+A &#x3D;&gt; 0b00
+C &#x3D;&gt; 0b01
+T &#x3D;&gt; 0b10
+G &#x3D;&gt; 0b11
+&#x60;&#x60;&#x60;
+
+### Reverse complement
+&#x60;&#x60;&#x60;julia
+using Bio.Seq
+const chr1 &#x3D; first(read(&quot;/Users/dcjones/Homo_sapiens.GRCh38.dna.primary_assembly.fa&quot;, FASTA)).seq
+@time reverse_complement(chr1);
+&#x60;&#x60;&#x60;
+151.301 milliseconds (11 allocations: 91171 KB)
+Versus 956 milliseconds in Biostrings (R) and 445 milliseconds in SeqAn (C++)
+
+---
+name: nucseq2
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+### Counting Kmers
+&#x60;&#x60;&#x60;julia
+@time DNAKmerCounts{10}(chr1);
+&#x60;&#x60;&#x60;
+1.901 seconds (8 allocations: 4096 KB)
+Versus 2.724 seconds in Biostrings (R) and 5.954 seconds in SeqAn (C++)
+
+### Counting Nucleotides
+&#x60;&#x60;&#x60;julia
+@time NucleotideCounts(chr1)
+&#x60;&#x60;&#x60;
+67.946 milliseconds (196 k allocations: 3058 KB)
+Versus 1193 milliseconds in Biostrings (R) 3165 milliseconds in SeqAn (C++)
+
+&#x60;&#x60;&#x60;julia
+count_c(x::Uint64) &#x3D; count_ones((((~x) &gt;&gt;&gt; 1) &amp; x) &amp; 0x5555555555555555)
+&#x60;&#x60;&#x60;
+
+---
+name: nucseq3
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+### Translation
+&#x60;&#x60;&#x60;julia
+const seqs &#x3D; collect(read(&quot;/Users/dcjones/human-coding-sequences.fa&quot;, FASTA))
+@time for seq in seqs
+    translate(convert(RNASequence, seq.seq[1:end-3]), Seq.standard_genetic_code, true)
+end
+&#x60;&#x60;&#x60;
+467.524 milliseconds (765 k allocations: 65283 KB)
+632 milliseconds in Biostrings (R) and 938 milliseconds in SeqAn (C++)
+
+### Subsequences are cheap
+&#x60;&#x60;&#x60;julia
+@time [chr1[i:end] for i in 1:1000000];
+&#x60;&#x60;&#x60;
+48.829 milliseconds (1000 k allocations: 54688 KB)
+
+Immutable by convention.
+
+---
+name: intervals
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Intervals
+
+&#x60;&#x60;&#x60;julia
+immutable Interval{T}
+    seqname::ASCIIString
+    first::Int64
+    last::Int64
+    strand::Strand
+    metadata::T
+end
+&#x60;&#x60;&#x60;
+B+-trees are provided by IntervalTrees:
+
+.center[![B+-tree image](img/btree.svg)]
+
+Intersection is a fundamental operation for sets of intervals.
+Find all pairs of intervals from A and B that intersect.
+
+---
+name: intervals2
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+### Intersection
+&#x60;&#x60;&#x60;julia
+genes &#x3D; read(&quot;genes.bed&quot;, BED)
+reads &#x3D; IntervalCollection(read(&quot;reads.bed&quot;, BED))
+@time for (a,b) in intersect(reads, genes)
+end
+&#x60;&#x60;&#x60;
+3.190 seconds (17592 k allocations: 612 MB, 59.76% gc time)
+5.9 seconds for &#x60;bedtools intersect -loj&#x60;.
+
+.center[![intervals image](img/interval-intersection.svg)]
+
+---
+name: intervals3
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+### Coverage
+&#x60;&#x60;&#x60;julia
+@time coverage(read(&quot;bodymap-heart-2-chr1.bed&quot;, BED))
+
+IntervalCollection with 3208603 intervals:
+  chr1:10586-10633    .    1
+  ⋮
+&#x60;&#x60;&#x60;
+34.209 seconds      (419 M allocations: 16216 MB, 31.36% gc time)
+&#x60;bedtools genomecov&#x60; takes 54.4 seconds to do the same.
+
+.center[![coveragesvg](img/coverage.svg)]
+
+---
+name: alignments
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Sequence alignments
+
+Use an anchor based system.
+
+&#x60;&#x60;&#x60;julia
+immutable AlignmentAnchor
+    seqpos::Int
+    refpos::Int
+    op::Operation
+end
+
+immutable Alignment
+    anchors::Vector{AlignmentAnchor}
+    firstref::Int
+    lastref::Int
+end
+
+immutable AlignedSequence{S}
+    seq::S
+    aln::Alignment
+end
+&#x60;&#x60;&#x60;
+
+Operations supported covers all CIGAR ops, encoded as single bytes.
+
+---
+name: moretocome
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# More to come
+
+- Dalliance
+
+- BED &amp; BigBED
+
+- Alignment Algorithms
+
+- Project Management
+
+- Phylogenetics
+
+- Population Genetics
+
+- Assembly and PanGenomics
+
+The list goes on...
+
+---
+name: thankyou
+slide_author: Ben J. Ward
+title: How BioJulia is building for the future.
+author: Ben J. Ward
+
+# Thank You!
+
+Github: https://github.com/BioJulia
+
+Gitter: https://gitter.im/BioJulia/Bio.jl
+
+    </textarea>
+    <script src="http://gnab.github.io/remark/downloads/remark-latest.min.js"></script>
+    <script>
+      var hljs = remark.highlighter.engine;
+    </script>
+    <script src="http://gnab.github.io/remark/remark.language.js"></script>
+    <script>
+      var slideshow = remark.create({
+          highlightStyle: 'monokai',
+          highlightLanguage: 'remark',
+          highlightLines: true
+        }) ;
+    </script>
+  </body>
+</html>
