@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="style/base.css">
+  </head>
+  <body>
+      <!--<link rel="stylesheet" href="styles/dark.css">-->
+    <script src="remark-latest.min.js" type="text/javascript"></script>
+    <script src="highlight.pack.js"></script>
+    <script type="text/javascript">
+        // This breaks highlight.
+        //hljs.initHighlightingOnLoad();
+        remark.highlighter.engine = hljs;
+        var slideshow = remark.create({
+            sourceUrl: "slides.md",
+            highlightStyle: "tomorrow-night"
+        });
+    </script>
+  </body>
+</html>
